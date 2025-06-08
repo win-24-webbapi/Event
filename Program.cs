@@ -23,10 +23,14 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", builder =>
     {
-        builder.WithOrigins("http://localhost:5173") // Frontend URL
-               .AllowAnyMethod()
-               .AllowAnyHeader()
-               .AllowCredentials();
+        builder.WithOrigins(
+            "http://localhost:5173", // Local development
+            "https://ashy-bay-0b0f05003.6.azurestaticapps.net", // New Azure Static Web App
+            "https://eventshram-fyc2gmgaevcza9g6.swedencentral-01.azurewebsites.net" // EventService
+        )
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials();
     });
 });
 

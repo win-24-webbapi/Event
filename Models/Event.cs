@@ -20,6 +20,7 @@ namespace EventService.API.Models
 
         [Required]
         public DateTime EndDate { get; set; }
+        
 
         [Required]
         [StringLength(200)]
