@@ -61,6 +61,7 @@ namespace EventService.API.Services
         public async Task DeleteEventAsync(int id)
         {
             var eventToDelete = await _context.Events.FindAsync(id);
+            
             if (eventToDelete != null)
             {
                 _context.Events.Remove(eventToDelete);
